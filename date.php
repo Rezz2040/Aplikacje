@@ -3,4 +3,7 @@
     echo "Today is " . date("d/m/Y") . "<br>";
     echo "Today is " . date("d-m-Y") . "<br>";
     echo "Today is " . date("l") . "<br>";
+
+    //get a simple time
+    echo "The time is " . date("h:i:sa");
 ?>
