@@ -1,6 +1,6 @@
 <?php
-    $wzorzec = '/[-\w.]+@([-A-z0-9]+\.)+[A-z]/';
-    $tekst = "mój adres to marcinrezler99@gmail.com";
+    $wzorzec = '/[-\w\.]+@([-A-z0-9]+\.)+[A-z]/';
+    $tekst = "mój adres to marcin.rezler99@gmail.com";
     if(preg_match($wzorzec, $tekst))
         echo "znaleziono adres mailowy";
     else
