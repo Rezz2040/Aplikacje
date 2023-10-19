@@ -40,16 +40,34 @@
     //     echo "Error creating table: " . mysqli_error($conn);
     // }
     
+    ////dodawanie rekordow
+    // $sql = "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Jan', 'Wieprz', 'johnpork@niga.com');";
+    // $sql .= "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Kamil', 'Slimak', 'kamil.slimak@tosamo.com');";
+    // $sql .= "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Nigga', 'Niggerson', 'nigganiggerson@niga.com');";
 
-    $sql = "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Jan', 'Wieprz', 'johnpork@niga.com');";
-    $sql .= "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Kamil', 'Slimak', 'kamil.slimak@tosamo.com');";
-    $sql .= "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('Nigga', 'Niggerson', 'nigganiggerson@niga.com');";
+    // if(mysqli_multi_query($conn, $sql)) {
+    //     echo "New recorrd created successfully";
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    // }
 
-    if(mysqli_multi_query($conn, $sql)) {
-        echo "New recorrd created successfully";
+    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $result = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result) > 0) {
+        //output data of each row        
+        echo "<table>\n";
+        echo "<tr><td>Id</td><td>Name</td></tr>\n";
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "id: " . $row["id"]. " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
+            
+            echo "<tr><td>" . $row["id"] . "</td><td>". $row["firstname"] . " " . $row["lastname"] . "</td></tr>\n";
+        }
+        echo "</table>";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "0 results";
     }
+
 
     mysqli_close($conn);
 ?>
