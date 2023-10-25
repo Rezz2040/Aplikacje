@@ -24,7 +24,12 @@ Your email address is: <?php echo $_POST["email"]; ?>
     }
 
 
-    $sql = "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('$_POST[firstname]', '$_POST[lastname]', '$_POST[email]');";
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $email = $_POST["email"];
+
+
+    $sql = "INSERT INTO MyGuests(firstname, lastname, email) VALUES ('$firstname', '$lastname', '$email');";
 
     if(mysqli_query($conn, $sql)) {
         echo "New record created successfully";
