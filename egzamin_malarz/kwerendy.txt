@@ -1,0 +1,4 @@
+kw1: SELECT cena, pojemnosc FROM farby WHERE kolor="czerwony";
+kw2: SELECT kolor, cena/pojemnosc FROM farby;
+kw3: SELECT kolor, liczba_puszek FROM malowanie JOIN farby ON malowanie.id_farby = farby.id_farby where id_pomieszczenia=3;
+kw4: CREATE VIEW pomieszczenie1 AS SELECT id_sciany, id_farby, liczba_puszek FROM malowanie WHERE id_pomieszczenia = 1;
