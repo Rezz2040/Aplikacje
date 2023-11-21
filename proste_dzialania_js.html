@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROSTE DZIAŁANIA</h1>
+    <form name="formularz" onSubmit="return false;">
+        <p><i>Podaj pierwszą liczbę</i> <input type="number" id="liczba1"></p>
+        <p><i>Podaj drugą liczbę</i> <input type="number" id="liczba2"></p>
+        <button onclick="fun(1);">DODAWANIE</button>
+        <button onclick="fun(2);">ODEJMOWANIE</button>
+        <button onclick="fun(3);">MNOŻENIE</button>
+        <button onclick="fun(4);">DZIELENIE</button><br>
+        <output id="wynik"></output>
+    </form>
+</body>
+<script>
+    function fun(operacja){
+        let liczba1 = parseInt(document.querySelector("#liczba1").value);
+        let liczba2 = parseInt(document.querySelector("#liczba2").value);
+        console.log(liczba1);
+        console.log(liczba2);
+        let wynik;
+        if(isNaN(liczba1) || isNaN(liczba2)){
+            wynik="Proszę uzupełnić obie liczby.";
+        }else{
+            switch(operacja){
+            case 1: wynik=liczba1+liczba2; break;
+            case 2: wynik=liczba1-liczba2; break;
+            case 3: wynik=liczba1*liczba2; break;
+            case 4: 
+                if(liczba2 == 0){
+                    wynik="Nie dzielimy przez 0.";
+                }else{
+                    wynik=liczba1/liczba2; break;
+                }
+            }
+        }   
+    
+        document.querySelector("#wynik").innerHTML=wynik;
+    }
+</script>
+</html>
