@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <div class="baner"><h1>Całodobowa stacja paliw</h1></div>
+    <div class="menu">
+        <a href="stacja.html"><img src="home.png"></a>
+       <a href="obliczenia.html"><img src="znak.png"> </a>
+        <a href="kwerendy.txt">Pobierz dokumenty</a>
+        </div>
+    <div class="lewy"><h2>Orientacyjny koszt paliwa</h2>
+        Rodzaj paliwa (1-benzyna, 2-olej napędowy):<br>
+        <input type="number" name="typ" id="typ"><br>
+        Ile litrów?<br>
+        <input type="number" name="litry" id="litry"><br>
+        <button onclick="function1();">OBLICZ</button>
+        <div id="wypisz"></div>
+
+</div>
+    <div class="prawy"><img src="samochod.png" alt="samochód"></div>
+    <div class="stopka"><p>Stronę opracował: 0123456789</p></div>
+</body>
+<script>
+     function function1() {
+       var typ=document.getElementById("typ").value
+       var litry=document.getElementById("litry").value
+       var wypisz=document.getElementById("wypisz")
+       if(typ=1){
+        var cena=litry*4
+        wypisz.innerHTML="koszt paliwa: "+cena+"zł"
+       }else if(typ=2){
+        var cena=litry*3.5
+        wypisz.innerHTML="koszt paliwa: "+cena+"zł"
+       }else {
+        var cena=0
+        wypisz.innerHTML="koszt paliwa: "+cena+"zł"
+       }
+    }
+</script>
+</html>
