@@ -1,0 +1,10 @@
+<h1>Zdarzenie onchange</h1>
+<label>Wpisz swoje imię<input type="text" id="fname" onchange="eventOnChange()"></label><br>
+<label>Wpisz wiek<input type="number"></label>
+
+<script>
+    function eventOnChange() {
+        let x = document.querySelector("#fname");
+        x.value=x.value.toUpperCase();
+    }
+</script>
