@@ -1,0 +1,14 @@
+<h1>Usuwanie elementów</h1>
+<button id="myButton" onclick="remove()">usuń akapit</button>
+<div id="div1">
+    <p id="p1">akapit pierwszy</p>
+    <p id="p2">akapit drugi</p>
+</div>
+
+<script>
+    function remove() {
+        let parent=document.querySelector("#div1");
+        let child=document.querySelector("#p1");
+        parent.removeChild(child);
+    }
+</script>

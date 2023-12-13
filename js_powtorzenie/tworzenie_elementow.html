@@ -1,0 +1,32 @@
+<!-- <h1>Tworzenie elementów</h1>
+<button id="myButton" onclick="dodaj()">Dodaj akapit</button>
+<div id="div1">
+</div>
+
+<script>
+    function dodaj(){
+        let akapit=document.createElement("p");
+        let content=document.createTextNode("Nowy akapit");
+        akapit.appendChild(content);
+        let position=document.querySelector("#div1");
+        position.appendChild(akapit);
+    }
+</script> -->
+
+
+<h1>Tworzenie elementów numerowane</h1>
+<button id="myButton" onclick="dodaj()">Dodaj akapit</button>
+<div id="div1">
+</div>
+
+<script>
+    let i = 1;
+    function dodaj(){
+        let akapit=document.createElement("p");
+        let content=document.createTextNode(i+". Nowy akapit");
+        akapit.appendChild(content);
+        let position=document.querySelector("#div1");
+        position.appendChild(akapit);
+        i++;
+    }
+</script>
