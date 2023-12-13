@@ -1,4 +1,4 @@
-<h1>Usuwanie elementów</h1>
+<!-- <h1>Usuwanie elementów</h1>
 <button id="myButton" onclick="remove()">usuń akapit</button>
 <div id="div1">
     <p id="p1">akapit pierwszy</p>
@@ -10,5 +10,18 @@
         let parent=document.querySelector("#div1");
         let child=document.querySelector("#p1");
         parent.removeChild(child);
+    }
+</script> -->
+
+
+<div id="div1">
+    <p onclick="remove(this)">akapit pierwszy</p>
+    <p onclick="remove(this)">akapit drugi</p>
+</div>
+
+<script>
+    function remove(id) {
+        let parent=document.querySelector("#div1");
+        parent.removeChild(id);
     }
 </script>
