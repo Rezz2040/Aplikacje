@@ -1,0 +1,17 @@
+<h1>prywatne składowe obiektu</h1>
+<script>
+    class ClassWithPrivateField {
+        #privateField;
+
+        constructor(){
+            this.#privateField=42;
+        }
+        show(){
+            return this.#privateField;
+        }
+    }
+
+    const instance = new ClassWithPrivateField();
+    //console.log(instance.#privateField);
+    console.log(instance.show());
+</script>
