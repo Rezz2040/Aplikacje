@@ -1,0 +1,14 @@
+<h3>setInterval() - funkcja uruchamiana co jakiś czas</h3>
+<p id="timer"></p>
+<script>
+    function time() {
+        let now=new Date();
+        let hours=now.getHours().toString();
+        let minutes=now.getMinutes().toString();
+        let seconds=now.getSeconds().toString();
+        let currentTime=hours+":"+minutes+":"+seconds;
+        let place=document.querySelector("#timer");
+        place.innerHTML=currentTime;
+    }
+    setInterval(time, 1000);
+</script>
