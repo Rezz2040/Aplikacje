@@ -1,0 +1,26 @@
+<h3>stoper</h3>
+<p id="timer"></p>
+<script>
+    function stoper() {
+        let hours=0;
+        let minutes=0;
+        let seconds=0;
+        let timer=setInterval(function(){
+            if(seconds==59){
+                if(minutes==59){
+                    hours++;
+                    minutes++;
+                }else{
+                    minutes++;
+                }
+                seconds=0;
+            }else{
+                seconds++;
+            }
+            let czas=hours+":"+minutes+":"+seconds;
+            let place=document.querySelector("#timer");
+            place.innerHTML=czas;
+        }, 1000);
+    }
+    stoper();
+</script>
