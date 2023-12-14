@@ -31,11 +31,31 @@
 </script> -->
 
 
-<h1>wyszukiwanie pliku *.gif</h1>
+<!-- <h1>wyszukiwanie pliku *.gif</h1>
 
 <script>
     let tekst = "Ikona jest w pliku logo.gif";
     let wzorzec = /\S*\.gif/i;
-    let pozycja = tekst.search(wzorzec);
+    let pozycja = tekst.search(wzorzec); 
     document.write('znaleziono: ' + tekst.slice(pozycja));
+</script> -->
+
+
+<!-- <h1>wyszukiwanie adresu email</h1>
+
+<script>
+    const tekst = "adres email: john1.fasola2@in.pl";
+    let wzorzec = /[\w\.-]+@([-A-z0-9])+[A-z]/;
+    let pozycja = tekst.search(wzorzec); 
+    document.write(tekst.slice(pozycja));
+</script> -->
+
+
+<h1>wyszukiwanie daty</h1>
+
+<script>
+    const tekst = "Maków Podhalański 17.11.2022";
+    let wzorzec = /([0123]?\d)[\. -\/]([01]?\d)[\. -\/](\d{4})/;
+    let pozycja = tekst.search(wzorzec); 
+    document.write(tekst.slice(pozycja));
 </script>
