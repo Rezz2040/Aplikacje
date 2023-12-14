@@ -1,0 +1,72 @@
+<!-- <h3>walidacja formularza</h3>
+
+<form action="write2DB.php">
+    <label for="name">Wprowadź imię*</label>
+    <input type="text" name="imie" required>
+    <input type="submit" value="Zapisz">
+    <p>*pole wymagane</p>
+</form> -->
+
+
+
+<!-- <h3>walidacja formularza - kontrola liczb</h3>
+
+<form action="write2DB.php">
+    <label for="waga">Wprowadź wagę</label>
+    <input type="number" name="waga" min="1" max="200">
+    <input type="submit" value="Zapisz">
+    <p>*pole wymagane</p>
+</form> -->
+
+
+<!-- <h3>walidacja formularza - zakres liczb</h3>
+
+<p id="wynik"></p>
+<form action="write2DB.php">
+    <label for="liczba">Wprowadź liczbę*</label>
+    <input type="number" name="liczba" id="liczba">
+    <button type="button" onclick="checkNumber()">Wyślij</button>
+    <p>*pole wymagane</p>
+</form>
+<script>
+    function checkNumber() {
+        const MIN=1;
+        const MAX=10;
+        var result;
+        let liczba=document.querySelector("#liczba").value;
+        if(liczba>=MIN && liczba<=MAX){
+            result="Dane poprawne";
+        }else{
+            result="Dane niepoprawne"
+        }
+        document.querySelector("#wynik").innerHTML=result;
+    }
+</script> -->
+
+
+<h3>walidacja formularza - adres email</h3>
+
+<form name="myform" id="form1" action="write2DB.php">
+    <label for="email">Wprowadź adres email*</label>
+    <input type="text" name="email" id="email">
+    <p id="wynik"></p>
+    <input type="submit" value="wyślij" id="send">
+    <p>*pole wymagane</p>
+</form>
+<script>
+    document.querySelector("#send").addEventListener("click", checkMail);
+
+    function checkMail() {
+        let mailText=document.querySelector("#email").value;
+        let reg_mail=/[\w\.-]+@([-A-z0-9])+[A-z]/;
+        let position=mailText.search(reg_mail);
+        if(position==-1){
+            document.querySelector("#wynik").innerHTML="nie znaleziono";
+            event.preventDefault();
+        }
+        if(mailText==""){
+            document.querySelector("#wynik").innerHTML="Nie może być puste";
+            return false;
+        }
+    }
+</script>
